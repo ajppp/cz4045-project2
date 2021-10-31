@@ -88,6 +88,7 @@ def batchify(data, bsz):
     data = data.view(bsz, -1).t().contiguous()
     return data.to(device)
 
+
 eval_batch_size = 10
 train_data = batchify(corpus.train, args.batch_size)
 val_data = batchify(corpus.valid, eval_batch_size)
@@ -134,6 +135,14 @@ def get_batch(source, i):
     target = source[i+1:i+1+seq_len].view(-1)
     return data, target
 
+def get_batch_FNN(source, i):
+    if(args.bptt < len(source) - i)
+        seq_len = min(args.bptt, len(source) - 1 - i)
+        data = source[i:i+seq_len]
+        target = source[i+1:i+1+seq_len].view(-1)
+        return data, target
+    else:
+        return None, None
 
 def evaluate(data_source):
     # Turn on evaluation mode which disables dropout.
