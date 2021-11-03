@@ -155,8 +155,9 @@ def evaluate(data_source):
         for i in range(0, data_source.size(0) - 1, args.bptt):
             #data, targets = get_batch(data_source, i)
             data, targets = get_batch_FNN(data_source, i)
-            output = model(data)
-            total_loss += len(data) * criterion(output, targets).item()
+            if data is not None:
+                output = model(data)
+                total_loss += len(data) * criterion(output, targets).item()
     return total_loss / (len(data_source) - 1)
 
 def export_onnx(path, batch_size, seq_len):
