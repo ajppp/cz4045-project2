@@ -103,6 +103,7 @@ if args.model == 'Transformer':
     model = model.TransformerModel(ntokens, args.emsize, args.nhead, args.nhid, args.nlayers, args.dropout).to(device)
 elif args.model == 'FNN':
     model = FNNModel.FNNModel(ntokens, args.emsize, args.nhid, args.bptt, args.batch_size)
+    model.to(device)
 else:
     model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied).to(device)
 
