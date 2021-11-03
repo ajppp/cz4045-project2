@@ -89,7 +89,7 @@ def batchify(data, bsz):
     return data.to(device)
 
 
-eval_batch_size = 20
+eval_batch_size = args.batch_size
 train_data = batchify(corpus.train, args.batch_size)
 val_data = batchify(corpus.valid, eval_batch_size)
 test_data = batchify(corpus.test, eval_batch_size)
@@ -102,8 +102,7 @@ ntokens = len(corpus.dictionary)
 if args.model == 'Transformer':
     model = model.TransformerModel(ntokens, args.emsize, args.nhead, args.nhid, args.nlayers, args.dropout).to(device)
 elif args.model == 'FNN':
-    model = FNNModel.FNNModel(ntokens, args.emsize, args.nhid, args.bptt, args.batch_size)
-    model.to(device)
+    model = FNNModel.FNNModel(ntokens, args.emsize, args.nhid, args.bptt, args.batch_size).to(device)
 else:
     model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied).to(device)
 
@@ -152,7 +151,6 @@ def evaluate(data_source):
     # Turn on evaluation mode which disables dropout.
     model.eval()
     total_loss = 0.
-    ntokens = len(corpus.dictionary)
     with torch.no_grad():
         for i in range(0, data_source.size(0) - 1, args.bptt):
             #data, targets = get_batch(data_source, i)
@@ -176,36 +174,36 @@ def train():
     model.train()
     total_loss = 0.
     start_time = time.time()
-    ntokens = len(corpus.dictionary)
     for batch, i in enumerate(range(0, train_data.size(0) - 1, args.bptt)):
         data, targets = get_batch_FNN(train_data, i)
         # starting each batch, we detach the hidden state from how it was previously produced.
         # if we didn't, the model would try backpropagating all the way to start of the dataset.
-        optimizer.zero_grad()
-        output = model(data)
-        # criterion is defined above as NLLLoss
-        loss = criterion(output, targets)
-        loss.backward()
-        optimizer.step()
+        if data is not None:
+            optimizer.zero_grad()
+            output = model(data)
+            # criterion is defined above as NLLLoss
+            loss = criterion(output, targets)
+            loss.backward()
+            optimizer.step()
 
-        # `clip_grad_norm` helps prevent the exploding gradient problem in rnns / lstms.
-        torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
-        for p in model.parameters():
-            p.data.add_(p.grad, alpha=-lr)
+            # `clip_grad_norm` helps prevent the exploding gradient problem in rnns / lstms.
+            torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
+            for p in model.parameters():
+                p.data.add_(p.grad, alpha=-lr)
 
-        total_loss += loss.item()
+            total_loss += loss.item()
 
-        if batch % args.log_interval == 0 and batch > 0:
-            cur_loss = total_loss / args.log_interval
-            elapsed = time.time() - start_time
-            print('| epoch {:3d} | {:5d}/{:5d} batches | lr {:02.2f} | ms/batch {:5.2f} | '
-                    'loss {:5.2f} | ppl {:8.2f}'.format(
-                epoch, batch, len(train_data) // args.bptt, lr,
-                elapsed * 1000 / args.log_interval, cur_loss, math.exp(cur_loss)))
-            total_loss = 0
-            start_time = time.time()
-        if args.dry_run:
-            break
+            if batch % args.log_interval == 0 and batch > 0:
+                cur_loss = total_loss / args.log_interval
+                elapsed = time.time() - start_time
+                print('| epoch {:3d} | {:5d}/{:5d} batches | lr {:02.2f} | ms/batch {:5.2f} | '
+                        'loss {:5.2f} | ppl {:8.2f}'.format(
+                    epoch, batch, len(train_data) // args.bptt, lr,
+                    elapsed * 1000 / args.log_interval, cur_loss, math.exp(cur_loss)))
+                total_loss = 0
+                start_time = time.time()
+            if args.dry_run:
+                break
 
 # Loop over epochs.
 lr = args.lr
@@ -213,7 +211,6 @@ best_val_loss = None
 
 # At any point you can hit Ctrl + C to break out of training early.
 try:
-
     for epoch in range(1, args.epochs+1):
         epoch_start_time = time.time()
         train()
