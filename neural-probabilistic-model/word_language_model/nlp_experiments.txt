@@ -1,0 +1,137 @@
+BATCH SIZE========================================================================
+default: 20
+complete: YES
+name: fnn_base.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --lr 0.1 --batch_size 20 --cuda > fnn_base.txt
+
+combination 1: 50
+complete: DONE
+name: fnn_batchsize_50.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --lr 0.1 --batch_size 50 --cuda > fnn_batchsize_50.txt
+
+combination 2: 100
+complete: DONE
+name: fnn_batchsize_100.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --lr 0.1 --batch_size 100 --cuda > fnn_batchsize_100.txt
+
+combination 3: 200
+complete: DONE
+name: fnn_batchsize_200.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --lr 0.1 --batch_size 200 --cuda > fnn_batchsize_200.txt
+
+
+
+LEARNING RATE========================================================================
+default: 0.1 (actually 20 but not gonna do that agn lol)
+complete: -
+name: fnn_base.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --lr 0.1 --batch_size 100 --cuda > fnn_base.txt
+
+combination 1: 0.05
+complete: DONE
+name: fnn_lr_0.05.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --lr 0.05 --batch_size 100 --cuda > fnn_lr_0.05.txt
+
+combination 2: 0.01
+complete: DONE
+name: fnn_lr_0.01.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --lr 0.01 --batch_size 100 --cuda > fnn_lr_0.01.txt
+
+combination 3: 0.005
+complete: DONE
+name: fnn_lr_0.005.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --lr 0.005 --batch_size 100 --cuda > fnn_lr_0.005.txt
+
+
+EMBEDDING SIZE======================================================================
+default: 200
+complete: -
+name: fnn_base.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --emsize 200 --lr 0.1 --batch_size 100 --cuda > fnn_base.txt
+
+combination 1: 100
+complete: DONE
+name: fnn_emsize_100.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --emsize 100 --lr 0.1 --batch_size 200 --cuda > fnn_emsize_100.txt
+
+combination 2: 300
+complete: DONE
+name: fnn_emsize_300.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --emsize 300 --lr 0.1 --batch_size 200 --cuda > fnn_emsize_300.txt
+
+combination 3: 400
+complete: DONE
+name: fnn_emsize_400.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --emsize 400 --lr 0.1 --batch_size 200 --cuda > fnn_emsize_400.txt
+
+HIDDEN LAYER SIZE====================================================================
+default: 2
+complete: -
+name: fnn_batchsize_200.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --nlayers 2 --emsize 200 --lr 0.1 --batch_size 200 --cuda > fnn_base.txt
+
+combination 1: 3
+complete: -
+name: fnn_nlayer_3.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --nlayers 3 --emsize 200 --lr 0.1 --batch_size 200 --cuda > fnn_nlayer_3.txt
+
+combination 2: 4
+complete: -
+name: fnn_nlayer_3.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --nlayers 4 --emsize 200 --lr 0.1 --batch_size 200 --cuda > fnn_nlayer_4.txt
+
+combination 3: 5
+complete: -
+name: fnn_nlayer_3.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --nlayers 5 --emsize 200 --lr 0.1 --batch_size 200 --cuda > fnn_nlayer_5.txt
+
+DROPOUT ===========================================================================
+default: 0.2
+complete: -
+name: fnn_base.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout 0.2 --emsize TBD --lr TBD --batch_size TBD --cuda > fnn_base.txt
+
+combination 1: 0.1
+complete: NO
+name: fnn_dropout_0.1.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout 0.1 --emsize TBD --lr TBD --batch_size TBD --cuda > fnn_dropout_0.1.txt
+
+dcombination 2: 0.05
+complete: NO
+name: fnn_dropout_0.05.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout 0.05 --emsize TBD --lr TBD --batch_size TBD --cuda > fnn_dropout_0.05.txt
+
+combination 3: 0.3
+complete: NO
+name: fnn_dropout_0.3.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout 0.3 --emsize TBD --lr TBD --batch_size TBD --cuda > fnn_dropout_0.3.txt
+
+TIED WEIGHTS ========================================================================
+default: -
+complete: -
+name: fnn_base.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout TBD --emsize TBD --lr TBD --batch_size TBD --cuda > fnn_base.txt
+
+combintation 1: tied
+complete: -
+name: fnn_tied.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --tied --dropout TBD --emsize TBD --lr TBD --batch_size TBD --cuda > fnn_tied.txt
+
+OPTIMIZER ==============================================================================
+default: SGD
+complete: -
+name: fnn_base.txt
+optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
+
+combination 1: ADAM
+complete: -
+name: fnn_optim_ADAM.txt
+optimizer = torch.optim.ADAM(model.parameters(), lr=args.lr)
+
+combintation 2: RMS
+complete: -
+name: fnn_optim_RMS.txt
+optimizer = torch.optim.RMSProp(model.parameters(), lr=args.lr)
+
+
+
