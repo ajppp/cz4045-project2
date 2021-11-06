@@ -93,3 +93,13 @@ $d$ - bias term for the FC layer (tanh to output)
 We also have optionally two different connections from the vector to the output.
 
 At this point, i will create the model in FNNModel.py
+
+# Changes Made
+
+## 03-11-2021
+
+OK i kinda forgot what I actually changed.. damn hahahaha
+what i remember is:
+definition of train and evaluate
+
+anyway, seems like we can begin experiments since it doesn't seem there's any bugs... (in train and evaluate at least), not sure if there are after that... shudders
