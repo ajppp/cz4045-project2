@@ -16,6 +16,8 @@ parser.add_argument('--data', type=str, default='./data/wikitext-2',
                     help='location of the data corpus')
 parser.add_argument('--model', type=str, default='FNN',
                     help='type of net (FNN, RNN_TANH, RNN_RELU, LSTM, GRU, Transformer)')
+parser.add_argument('--optim', type=str, default='SGD',
+                    help='type of optimizer (SGD, Adam, RMSProp, AdaDelta, AdaGrad, Momentum)')
 parser.add_argument('--emsize', type=int, default=200,
                     help='size of word embeddings')
 parser.add_argument('--nhid', type=int, default=200,
@@ -170,7 +172,18 @@ def export_onnx(path, batch_size, seq_len):
 
 def train():
     # turn on training mode which enables dropout.
-    optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
+    if args.optim == "Adam":
+        optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, betas=(0.9, 0.999), eps=1e-08, weight_decay=0)
+    elif args.optim == 'AdaDelta':
+        optimizer = torch.optim.Adadelta(model.parameters(), lr=args.lr, rho=0.9, eps=1e-06, weight_decay=0)
+    elif args.optim == 'RMSProp':
+        optimizer = torch.optim.RMSprop(model.parameters(), lr=args.lr, alpha=0.99, eps=1e-08, weight_decay=0, momentum=0, centered=False)
+    elif args.optim == 'AdaGrad':
+        torch.optim.Adagrad(params, lr=args.lr, lr_decay=0, weight_decay=0, initial_accumulator_value=0, eps=1e-10)
+    elif args.optim == 'Momentum':
+        torch.optim.SGD(model.parameters(), lr=args.lr, momentum=0.9)
+    else:
+        torch.optim.SGD(model.parameters(), lr=args.lr)
     # emsize is ninp in the model definition
     model.train()
     total_loss = 0.
