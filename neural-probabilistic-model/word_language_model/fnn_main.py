@@ -6,6 +6,7 @@ import os
 import torch
 import torch.nn as nn
 import torch.onnx
+from torch.optim import optimizer
 
 import data
 import model
@@ -54,6 +55,8 @@ parser.add_argument('--dry-run', action='store_true',
                     help='verify the code and the model')
 
 args = parser.parse_args()
+
+
 
 # Set the random seed manually for reproducibility.
 torch.manual_seed(args.seed)
@@ -179,11 +182,11 @@ def train():
     elif args.optim == 'RMSProp':
         optimizer = torch.optim.RMSprop(model.parameters(), lr=args.lr, alpha=0.99, eps=1e-08, weight_decay=0, momentum=0, centered=False)
     elif args.optim == 'AdaGrad':
-        torch.optim.Adagrad(params, lr=args.lr, lr_decay=0, weight_decay=0, initial_accumulator_value=0, eps=1e-10)
+        optimizer = torch.optim.Adagrad(model.parameters(), lr=args.lr, lr_decay=0, weight_decay=0, initial_accumulator_value=0, eps=1e-10)
     elif args.optim == 'Momentum':
-        torch.optim.SGD(model.parameters(), lr=args.lr, momentum=0.9)
+        optimizer = torch.optim.SGD(model.parameters(), lr=args.lr, momentum=0.9)
     else:
-        torch.optim.SGD(model.parameters(), lr=args.lr)
+        optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
     # emsize is ninp in the model definition
     model.train()
     total_loss = 0.

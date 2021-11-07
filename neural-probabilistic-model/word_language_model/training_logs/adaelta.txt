@@ -1,0 +1,286 @@
+| epoch   1 |   200/ 1491 batches | lr 0.10 | ms/batch 81.99 | loss  9.85 | ppl 18872.11
+cur_loss val is 9.84544056892395
+| epoch   1 |   400/ 1491 batches | lr 0.10 | ms/batch 68.04 | loss  8.14 | ppl  3416.04
+cur_loss val is 8.136237061023712
+| epoch   1 |   600/ 1491 batches | lr 0.10 | ms/batch 70.43 | loss  7.69 | ppl  2187.43
+cur_loss val is 7.690481684207916
+| epoch   1 |   800/ 1491 batches | lr 0.10 | ms/batch 69.39 | loss  7.44 | ppl  1696.88
+cur_loss val is 7.436547074317932
+| epoch   1 |  1000/ 1491 batches | lr 0.10 | ms/batch 69.49 | loss  7.33 | ppl  1518.30
+cur_loss val is 7.32534449338913
+| epoch   1 |  1200/ 1491 batches | lr 0.10 | ms/batch 69.67 | loss  7.24 | ppl  1396.42
+cur_loss val is 7.241666054725647
+| epoch   1 |  1400/ 1491 batches | lr 0.10 | ms/batch 69.70 | loss  7.17 | ppl  1293.83
+cur_loss val is 7.1653586816787715
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch   1 | time: 107.93s | valid loss  6.87 | valid ppl   959.21
+-----------------------------------------------------------------------------------------
+| epoch   2 |   200/ 1491 batches | lr 0.10 | ms/batch 70.08 | loss  7.09 | ppl  1197.17
+cur_loss val is 7.08771714925766
+| epoch   2 |   400/ 1491 batches | lr 0.10 | ms/batch 69.74 | loss  7.02 | ppl  1118.01
+cur_loss val is 7.019301435947418
+| epoch   2 |   600/ 1491 batches | lr 0.10 | ms/batch 71.39 | loss  6.97 | ppl  1059.00
+cur_loss val is 6.965076217651367
+| epoch   2 |   800/ 1491 batches | lr 0.10 | ms/batch 74.04 | loss  6.87 | ppl   966.32
+cur_loss val is 6.873492834568023
+| epoch   2 |  1000/ 1491 batches | lr 0.10 | ms/batch 75.64 | loss  6.86 | ppl   955.04
+cur_loss val is 6.861755802631378
+| epoch   2 |  1200/ 1491 batches | lr 0.10 | ms/batch 75.70 | loss  6.84 | ppl   935.95
+cur_loss val is 6.841563243865966
+| epoch   2 |  1400/ 1491 batches | lr 0.10 | ms/batch 76.08 | loss  6.82 | ppl   913.38
+cur_loss val is 6.817148911952972
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch   2 | time: 111.46s | valid loss  6.59 | valid ppl   727.27
+-----------------------------------------------------------------------------------------
+| epoch   3 |   200/ 1491 batches | lr 0.10 | ms/batch 76.18 | loss  6.81 | ppl   903.65
+cur_loss val is 6.806445875167847
+| epoch   3 |   400/ 1491 batches | lr 0.10 | ms/batch 75.74 | loss  6.77 | ppl   873.46
+cur_loss val is 6.772461218833923
+| epoch   3 |   600/ 1491 batches | lr 0.10 | ms/batch 75.76 | loss  6.74 | ppl   842.82
+cur_loss val is 6.736758201122284
+| epoch   3 |   800/ 1491 batches | lr 0.10 | ms/batch 75.79 | loss  6.67 | ppl   787.18
+cur_loss val is 6.66845487833023
+| epoch   3 |  1000/ 1491 batches | lr 0.10 | ms/batch 75.83 | loss  6.67 | ppl   790.61
+cur_loss val is 6.672808542251587
+| epoch   3 |  1200/ 1491 batches | lr 0.10 | ms/batch 76.03 | loss  6.66 | ppl   781.44
+cur_loss val is 6.661144332885742
+| epoch   3 |  1400/ 1491 batches | lr 0.10 | ms/batch 75.74 | loss  6.65 | ppl   772.86
+cur_loss val is 6.650101881027222
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch   3 | time: 115.10s | valid loss  6.46 | valid ppl   639.74
+-----------------------------------------------------------------------------------------
+| epoch   4 |   200/ 1491 batches | lr 0.10 | ms/batch 76.48 | loss  6.66 | ppl   778.09
+cur_loss val is 6.656837117671967
+| epoch   4 |   400/ 1491 batches | lr 0.10 | ms/batch 76.10 | loss  6.63 | ppl   757.08
+cur_loss val is 6.62947377204895
+| epoch   4 |   600/ 1491 batches | lr 0.10 | ms/batch 76.05 | loss  6.61 | ppl   741.64
+cur_loss val is 6.608857870101929
+| epoch   4 |   800/ 1491 batches | lr 0.10 | ms/batch 76.07 | loss  6.54 | ppl   694.24
+cur_loss val is 6.542818596363068
+| epoch   4 |  1000/ 1491 batches | lr 0.10 | ms/batch 75.96 | loss  6.55 | ppl   702.16
+cur_loss val is 6.5541580033302305
+| epoch   4 |  1200/ 1491 batches | lr 0.10 | ms/batch 76.02 | loss  6.55 | ppl   695.97
+cur_loss val is 6.545301342010498
+| epoch   4 |  1400/ 1491 batches | lr 0.10 | ms/batch 75.97 | loss  6.54 | ppl   691.73
+cur_loss val is 6.53920202255249
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch   4 | time: 115.45s | valid loss  6.39 | valid ppl   593.30
+-----------------------------------------------------------------------------------------
+| epoch   5 |   200/ 1491 batches | lr 0.10 | ms/batch 76.30 | loss  6.55 | ppl   700.71
+cur_loss val is 6.552087790966034
+| epoch   5 |   400/ 1491 batches | lr 0.10 | ms/batch 76.05 | loss  6.53 | ppl   684.89
+cur_loss val is 6.529251310825348
+| epoch   5 |   600/ 1491 batches | lr 0.10 | ms/batch 76.03 | loss  6.51 | ppl   671.09
+cur_loss val is 6.508903863430024
+| epoch   5 |   800/ 1491 batches | lr 0.10 | ms/batch 75.97 | loss  6.45 | ppl   632.64
+cur_loss val is 6.449893872737885
+| epoch   5 |  1000/ 1491 batches | lr 0.10 | ms/batch 76.02 | loss  6.46 | ppl   640.72
+cur_loss val is 6.462587909698486
+| epoch   5 |  1200/ 1491 batches | lr 0.10 | ms/batch 76.09 | loss  6.46 | ppl   638.59
+cur_loss val is 6.459258987903595
+| epoch   5 |  1400/ 1491 batches | lr 0.10 | ms/batch 76.04 | loss  6.45 | ppl   634.90
+cur_loss val is 6.453472962379456
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch   5 | time: 115.42s | valid loss  6.33 | valid ppl   561.64
+-----------------------------------------------------------------------------------------
+| epoch   6 |   200/ 1491 batches | lr 0.10 | ms/batch 76.38 | loss  6.47 | ppl   647.58
+cur_loss val is 6.473246479034424
+| epoch   6 |   400/ 1491 batches | lr 0.10 | ms/batch 76.01 | loss  6.46 | ppl   636.54
+cur_loss val is 6.456040012836456
+| epoch   6 |   600/ 1491 batches | lr 0.10 | ms/batch 76.05 | loss  6.43 | ppl   622.67
+cur_loss val is 6.434012746810913
+| epoch   6 |   800/ 1491 batches | lr 0.10 | ms/batch 76.37 | loss  6.38 | ppl   587.88
+cur_loss val is 6.376524393558502
+| epoch   6 |  1000/ 1491 batches | lr 0.10 | ms/batch 77.17 | loss  6.40 | ppl   602.45
+cur_loss val is 6.401001265048981
+| epoch   6 |  1200/ 1491 batches | lr 0.10 | ms/batch 71.66 | loss  6.39 | ppl   593.51
+cur_loss val is 6.386060004234314
+| epoch   6 |  1400/ 1491 batches | lr 0.10 | ms/batch 72.50 | loss  6.38 | ppl   591.52
+cur_loss val is 6.382698714733124
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch   6 | time: 113.81s | valid loss  6.29 | valid ppl   537.23
+-----------------------------------------------------------------------------------------
+| epoch   7 |   200/ 1491 batches | lr 0.10 | ms/batch 70.39 | loss  6.41 | ppl   605.47
+cur_loss val is 6.406005108356476
+| epoch   7 |   400/ 1491 batches | lr 0.10 | ms/batch 70.00 | loss  6.39 | ppl   595.69
+cur_loss val is 6.389725868701935
+| epoch   7 |   600/ 1491 batches | lr 0.10 | ms/batch 70.00 | loss  6.37 | ppl   584.00
+cur_loss val is 6.3698995447158815
+| epoch   7 |   800/ 1491 batches | lr 0.10 | ms/batch 72.18 | loss  6.31 | ppl   552.27
+cur_loss val is 6.314032483100891
+| epoch   7 |  1000/ 1491 batches | lr 0.10 | ms/batch 73.40 | loss  6.33 | ppl   562.87
+cur_loss val is 6.333050611019135
+| epoch   7 |  1200/ 1491 batches | lr 0.10 | ms/batch 68.52 | loss  6.33 | ppl   558.80
+cur_loss val is 6.325785508155823
+| epoch   7 |  1400/ 1491 batches | lr 0.10 | ms/batch 73.56 | loss  6.32 | ppl   554.77
+cur_loss val is 6.318559129238128
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch   7 | time: 107.76s | valid loss  6.25 | valid ppl   518.74
+-----------------------------------------------------------------------------------------
+| epoch   8 |   200/ 1491 batches | lr 0.10 | ms/batch 66.35 | loss  6.35 | ppl   570.77
+cur_loss val is 6.3469851779937745
+| epoch   8 |   400/ 1491 batches | lr 0.10 | ms/batch 65.89 | loss  6.33 | ppl   561.96
+cur_loss val is 6.3314253520965575
+| epoch   8 |   600/ 1491 batches | lr 0.10 | ms/batch 65.89 | loss  6.32 | ppl   553.05
+cur_loss val is 6.315448062419891
+| epoch   8 |   800/ 1491 batches | lr 0.10 | ms/batch 65.90 | loss  6.25 | ppl   520.52
+cur_loss val is 6.254827370643616
+| epoch   8 |  1000/ 1491 batches | lr 0.10 | ms/batch 65.90 | loss  6.28 | ppl   531.63
+cur_loss val is 6.275950682163239
+| epoch   8 |  1200/ 1491 batches | lr 0.10 | ms/batch 65.89 | loss  6.27 | ppl   526.96
+cur_loss val is 6.267129285335541
+| epoch   8 |  1400/ 1491 batches | lr 0.10 | ms/batch 65.89 | loss  6.27 | ppl   526.15
+cur_loss val is 6.265583295822143
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch   8 | time: 100.08s | valid loss  6.22 | valid ppl   503.82
+-----------------------------------------------------------------------------------------
+| epoch   9 |   200/ 1491 batches | lr 0.10 | ms/batch 66.21 | loss  6.29 | ppl   538.07
+cur_loss val is 6.287980587482452
+| epoch   9 |   400/ 1491 batches | lr 0.10 | ms/batch 67.84 | loss  6.28 | ppl   533.38
+cur_loss val is 6.2792255449295045
+| epoch   9 |   600/ 1491 batches | lr 0.10 | ms/batch 68.68 | loss  6.26 | ppl   525.39
+cur_loss val is 6.264137563705444
+| epoch   9 |   800/ 1491 batches | lr 0.10 | ms/batch 67.24 | loss  6.21 | ppl   495.33
+cur_loss val is 6.205216255187988
+| epoch   9 |  1000/ 1491 batches | lr 0.10 | ms/batch 65.99 | loss  6.23 | ppl   505.28
+cur_loss val is 6.22510338306427
+| epoch   9 |  1200/ 1491 batches | lr 0.10 | ms/batch 66.45 | loss  6.22 | ppl   501.39
+cur_loss val is 6.217383918762207
+| epoch   9 |  1400/ 1491 batches | lr 0.10 | ms/batch 67.64 | loss  6.21 | ppl   500.12
+cur_loss val is 6.2148538899421695
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch   9 | time: 101.77s | valid loss  6.20 | valid ppl   491.11
+-----------------------------------------------------------------------------------------
+| epoch  10 |   200/ 1491 batches | lr 0.10 | ms/batch 67.11 | loss  6.24 | ppl   512.68
+cur_loss val is 6.23964631319046
+| epoch  10 |   400/ 1491 batches | lr 0.10 | ms/batch 68.06 | loss  6.23 | ppl   507.66
+cur_loss val is 6.229816737174988
+| epoch  10 |   600/ 1491 batches | lr 0.10 | ms/batch 66.67 | loss  6.21 | ppl   499.00
+cur_loss val is 6.212609519958496
+| epoch  10 |   800/ 1491 batches | lr 0.10 | ms/batch 66.12 | loss  6.15 | ppl   469.39
+cur_loss val is 6.1514445543289185
+| epoch  10 |  1000/ 1491 batches | lr 0.10 | ms/batch 66.95 | loss  6.17 | ppl   480.49
+cur_loss val is 6.17481392621994
+| epoch  10 |  1200/ 1491 batches | lr 0.10 | ms/batch 69.74 | loss  6.17 | ppl   476.97
+cur_loss val is 6.167459201812744
+| epoch  10 |  1400/ 1491 batches | lr 0.10 | ms/batch 70.36 | loss  6.16 | ppl   475.46
+cur_loss val is 6.164284222126007
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch  10 | time: 103.01s | valid loss  6.17 | valid ppl   480.35
+-----------------------------------------------------------------------------------------
+| epoch  11 |   200/ 1491 batches | lr 0.10 | ms/batch 69.37 | loss  6.19 | ppl   486.71
+cur_loss val is 6.18767498254776
+| epoch  11 |   400/ 1491 batches | lr 0.10 | ms/batch 69.25 | loss  6.18 | ppl   484.29
+cur_loss val is 6.182690353393554
+| epoch  11 |   600/ 1491 batches | lr 0.10 | ms/batch 70.46 | loss  6.17 | ppl   476.31
+cur_loss val is 6.1660746741294865
+| epoch  11 |   800/ 1491 batches | lr 0.10 | ms/batch 70.53 | loss  6.11 | ppl   448.87
+cur_loss val is 6.1067295122146605
+| epoch  11 |  1000/ 1491 batches | lr 0.10 | ms/batch 69.35 | loss  6.13 | ppl   459.40
+cur_loss val is 6.129927861690521
+| epoch  11 |  1200/ 1491 batches | lr 0.10 | ms/batch 69.03 | loss  6.12 | ppl   455.65
+cur_loss val is 6.12172878742218
+| epoch  11 |  1400/ 1491 batches | lr 0.10 | ms/batch 70.59 | loss  6.12 | ppl   454.90
+cur_loss val is 6.120071356296539
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch  11 | time: 106.52s | valid loss  6.15 | valid ppl   470.49
+-----------------------------------------------------------------------------------------
+| epoch  12 |   200/ 1491 batches | lr 0.10 | ms/batch 76.72 | loss  6.14 | ppl   465.86
+cur_loss val is 6.143893811702728
+| epoch  12 |   400/ 1491 batches | lr 0.10 | ms/batch 76.10 | loss  6.13 | ppl   461.66
+cur_loss val is 6.13482861995697
+| epoch  12 |   600/ 1491 batches | lr 0.10 | ms/batch 75.61 | loss  6.12 | ppl   456.06
+cur_loss val is 6.122615721225738
+| epoch  12 |   800/ 1491 batches | lr 0.10 | ms/batch 69.73 | loss  6.06 | ppl   429.13
+cur_loss val is 6.061771285533905
+| epoch  12 |  1000/ 1491 batches | lr 0.10 | ms/batch 68.78 | loss  6.08 | ppl   438.85
+cur_loss val is 6.084152452945709
+| epoch  12 |  1200/ 1491 batches | lr 0.10 | ms/batch 74.93 | loss  6.07 | ppl   434.46
+cur_loss val is 6.074103162288666
+| epoch  12 |  1400/ 1491 batches | lr 0.10 | ms/batch 76.30 | loss  6.08 | ppl   435.08
+cur_loss val is 6.075529336929321
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch  12 | time: 112.60s | valid loss  6.14 | valid ppl   463.45
+-----------------------------------------------------------------------------------------
+| epoch  13 |   200/ 1491 batches | lr 0.10 | ms/batch 77.72 | loss  6.10 | ppl   446.06
+cur_loss val is 6.100453474521637
+| epoch  13 |   400/ 1491 batches | lr 0.10 | ms/batch 70.10 | loss  6.09 | ppl   442.49
+cur_loss val is 6.092420003414154
+| epoch  13 |   600/ 1491 batches | lr 0.10 | ms/batch 69.81 | loss  6.08 | ppl   436.39
+cur_loss val is 6.078540575504303
+| epoch  13 |   800/ 1491 batches | lr 0.10 | ms/batch 67.41 | loss  6.02 | ppl   412.12
+cur_loss val is 6.021324639320373
+| epoch  13 |  1000/ 1491 batches | lr 0.10 | ms/batch 69.20 | loss  6.04 | ppl   421.10
+cur_loss val is 6.042859551906585
+| epoch  13 |  1200/ 1491 batches | lr 0.10 | ms/batch 69.67 | loss  6.04 | ppl   420.20
+cur_loss val is 6.0407249450683596
+| epoch  13 |  1400/ 1491 batches | lr 0.10 | ms/batch 70.23 | loss  6.03 | ppl   416.55
+cur_loss val is 6.032002856731415
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch  13 | time: 106.58s | valid loss  6.13 | valid ppl   457.22
+-----------------------------------------------------------------------------------------
+| epoch  14 |   200/ 1491 batches | lr 0.10 | ms/batch 67.77 | loss  6.06 | ppl   427.40
+cur_loss val is 6.05771755695343
+| epoch  14 |   400/ 1491 batches | lr 0.10 | ms/batch 66.84 | loss  6.05 | ppl   423.54
+cur_loss val is 6.048656730651856
+| epoch  14 |   600/ 1491 batches | lr 0.10 | ms/batch 66.83 | loss  6.04 | ppl   418.02
+cur_loss val is 6.035526700019837
+| epoch  14 |   800/ 1491 batches | lr 0.10 | ms/batch 66.85 | loss  5.98 | ppl   393.73
+cur_loss val is 5.975654349327088
+| epoch  14 |  1000/ 1491 batches | lr 0.10 | ms/batch 66.86 | loss  6.00 | ppl   404.59
+cur_loss val is 6.002877359390259
+| epoch  14 |  1200/ 1491 batches | lr 0.10 | ms/batch 66.84 | loss  5.99 | ppl   399.54
+cur_loss val is 5.990302829742432
+| epoch  14 |  1400/ 1491 batches | lr 0.10 | ms/batch 66.82 | loss  5.99 | ppl   399.54
+cur_loss val is 5.99032023191452
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch  14 | time: 101.62s | valid loss  6.11 | valid ppl   449.75
+-----------------------------------------------------------------------------------------
+| epoch  15 |   200/ 1491 batches | lr 0.10 | ms/batch 67.18 | loss  6.01 | ppl   409.07
+cur_loss val is 6.013891670703888
+| epoch  15 |   400/ 1491 batches | lr 0.10 | ms/batch 66.83 | loss  6.00 | ppl   405.15
+cur_loss val is 6.004259877204895
+| epoch  15 |   600/ 1491 batches | lr 0.10 | ms/batch 70.39 | loss  5.99 | ppl   400.88
+cur_loss val is 5.993660674095154
+| epoch  15 |   800/ 1491 batches | lr 0.10 | ms/batch 73.16 | loss  5.94 | ppl   379.41
+cur_loss val is 5.938620250225068
+| epoch  15 |  1000/ 1491 batches | lr 0.10 | ms/batch 72.48 | loss  5.96 | ppl   389.18
+cur_loss val is 5.964043078422546
+| epoch  15 |  1200/ 1491 batches | lr 0.10 | ms/batch 72.55 | loss  5.95 | ppl   384.95
+cur_loss val is 5.953117322921753
+| epoch  15 |  1400/ 1491 batches | lr 0.10 | ms/batch 72.68 | loss  5.95 | ppl   385.18
+cur_loss val is 5.953714284896851
+Finished one epoch
+-----------------------------------------------------------------------------------------
+| end of epoch  15 | time: 107.33s | valid loss  6.10 | valid ppl   445.36
+-----------------------------------------------------------------------------------------
+| epoch  16 |   200/ 1491 batches | lr 0.10 | ms/batch 71.27 | loss  5.97 | ppl   393.01
+cur_loss val is 5.973831760883331
+| epoch  16 |   400/ 1491 batches | lr 0.10 | ms/batch 69.25 | loss  5.97 | ppl   391.92
+cur_loss val is 5.971068885326385
+| epoch  16 |   600/ 1491 batches | lr 0.10 | ms/batch 66.31 | loss  5.96 | ppl   386.36
+cur_loss val is 5.956782355308532
+| epoch  16 |   800/ 1491 batches | lr 0.10 | ms/batch 88.84 | loss  5.90 | ppl   364.66
+cur_loss val is 5.898977155685425
+| epoch  16 |  1000/ 1491 batches | lr 0.10 | ms/batch 76.58 | loss  5.92 | ppl   373.17
+cur_loss val is 5.9220295643806455
+| epoch  16 |  1200/ 1491 batches | lr 0.10 | ms/batch 76.43 | loss  5.91 | ppl   369.43
+cur_loss val is 5.911947994232178
+| epoch  16 |  1400/ 1491 batches | lr 0.10 | ms/batch 94.62 | loss  5.91 | ppl   370.19
+cur_loss val is 5.914027428627014
+-----------------------------------------------------------------------------------------
+Exiting from training early

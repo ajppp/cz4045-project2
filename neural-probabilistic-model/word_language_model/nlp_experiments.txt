@@ -1,3 +1,55 @@
+
+Base : python fnn_main.py --bptt 7 --model FNN --epochs 20 --optim TBD --nhid 400 --emsize 200 --lr 0.1 --batch_size 200 --cuda > test.txt
+
+
+Adagrad
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --optim AdaGrad --nhid 400 --emsize 200 --lr 0.1 --batch_size 200 --cuda > adagrad.txt
+
+Adam
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --optim Adam --nhid 400 --emsize 200 --lr 0.001 --batch_size 200 --cuda > adam.txt
+
+Adadelta
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --optim Adadelta --nhid 400 --emsize 200 --lr 1.0 --batch_size 200 --cuda > adadelta.txt
+
+RMSprop
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --optim RMSprop --nhid 400 --emsize 200 --lr 0.01 --batch_size 200 --cuda > rmsprop.txt
+
+Momentum
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --optim Momentum --nhid 400 --emsize 200 --lr 0.1 --batch_size 200 --cuda > momentum_0.1.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --optim Momentum --nhid 400 --emsize 200 --lr 0.01 --batch_size 200 --cuda > momentum_0.01.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 BATCH SIZE========================================================================
 default: 20
 complete: YES
@@ -64,7 +116,34 @@ complete: DONE
 name: fnn_emsize_400.txt
 python fnn_main.py --bptt 7 --model FNN --epochs 20 --emsize 400 --lr 0.1 --batch_size 200 --cuda > fnn_emsize_400.txt
 
-HIDDEN LAYER SIZE====================================================================
+HIDDEN LAYER SIZE ===========================================================================================================
+
+Combination 1: 300
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --nhid 300 --emsize 200 --lr 0.1 --batch_size 200 --cuda > hidden_layersize_300.txt
+
+
+Combination 2: 400
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --nhid 400 --emsize 200 --lr 0.1 --batch_size 200 --cuda > hidden_layersize_400.txt
+
+
+Combination 3: 500
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --nhid 100 --emsize 500 --lr 0.1 --batch_size 200 --cuda > hidden_layersize_500.txt
+
+
+==========================================================================================================================
+
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --nhid 400 --emsize 200 --lr 0.1 --batch_size 200 --cuda > test.txt
+
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --nhid 400 --emsize 200 --lr 0.1 --batch_size 200 --cuda > Adadelta.txt
+
+=============================================================================================================================
+NOT DONE
+=============================================================================================================================
+
+
+
+
+HIDDEN LAYER NUMBER====================================================================
 default: 2
 complete: -
 name: fnn_batchsize_200.txt
@@ -89,22 +168,22 @@ DROPOUT ========================================================================
 default: 0.2
 complete: -
 name: fnn_base.txt
-python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout 0.2 --emsize TBD --lr TBD --batch_size TBD --cuda > fnn_base.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout 0.2 --emsize 200 --lr 0.1 --batch_size 200 --cuda > fnn_base.txt
 
 combination 1: 0.1
 complete: NO
 name: fnn_dropout_0.1.txt
-python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout 0.1 --emsize TBD --lr TBD --batch_size TBD --cuda > fnn_dropout_0.1.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout 0.1 --emsize 200 --lr 0.1 --batch_size 200 --cuda > fnn_dropout_0.1.txt
 
-dcombination 2: 0.05
+dcombination 2: 0.4
 complete: NO
 name: fnn_dropout_0.05.txt
-python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout 0.05 --emsize TBD --lr TBD --batch_size TBD --cuda > fnn_dropout_0.05.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout 0.05 --emsize 200 --lr 0.1 --batch_size 200 --cuda > fnn_dropout_0.05.txt
 
 combination 3: 0.3
 complete: NO
 name: fnn_dropout_0.3.txt
-python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout 0.3 --emsize TBD --lr TBD --batch_size TBD --cuda > fnn_dropout_0.3.txt
+python fnn_main.py --bptt 7 --model FNN --epochs 20 --dropout 0.3 --emsize 200 --lr 0.1 --batch_size 200 --cuda > fnn_dropout_0.3.txt
 
 TIED WEIGHTS ========================================================================
 default: -
@@ -118,6 +197,8 @@ name: fnn_tied.txt
 python fnn_main.py --bptt 7 --model FNN --epochs 20 --tied --dropout TBD --emsize TBD --lr TBD --batch_size TBD --cuda > fnn_tied.txt
 
 OPTIMIZER ==============================================================================
+https://pytorch.org/docs/stable/optim.html
+
 default: SGD
 complete: -
 name: fnn_base.txt
@@ -126,12 +207,14 @@ optimizer = torch.optim.SGD(model.parameters(), lr=args.lr)
 combination 1: ADAM
 complete: -
 name: fnn_optim_ADAM.txt
-optimizer = torch.optim.ADAM(model.parameters(), lr=args.lr)
+optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 
 combintation 2: RMS
 complete: -
 name: fnn_optim_RMS.txt
-optimizer = torch.optim.RMSProp(model.parameters(), lr=args.lr)
+optimizer = torch.optim.RMSprop(model.parameters(), lr=args.lr)
 
 
+Adagrad
 
+Adadelta
