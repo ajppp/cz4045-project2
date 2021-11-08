@@ -10,7 +10,7 @@ from torch.optim import optimizer
 
 import data
 import model
-import FNNModel
+from FNNModel1 import FNNModel
 
 parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 FNN/RNN/LSTM/GRU/Transformer Language Model')
 parser.add_argument('--data', type=str, default='./data/wikitext-2',
@@ -107,7 +107,7 @@ ntokens = len(corpus.dictionary)
 if args.model == 'Transformer':
     model = model.TransformerModel(ntokens, args.emsize, args.nhead, args.nhid, args.nlayers, args.dropout).to(device)
 elif args.model == 'FNN':
-    model = FNNModel.FNNModel(ntokens, args.emsize, args.nhid, args.bptt, args.batch_size, args.dropout, args.tied).to(device)
+    model = FNNModel(ntokens, args.emsize, args.nhid, args.bptt, args.batch_size, args.dropout, args.tied).to(device)
 else:
     model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied).to(device)
 
