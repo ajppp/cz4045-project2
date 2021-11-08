@@ -10,7 +10,7 @@ from torch.optim import optimizer
 
 import data
 import model
-from FNNModel1 import FNNModel
+from FNNModel2 import FNNModel
 
 parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 FNN/RNN/LSTM/GRU/Transformer Language Model')
 parser.add_argument('--data', type=str, default='./data/wikitext-2',
