@@ -65,7 +65,8 @@ with open(args.outf, 'w') as outf:
                 word_tensor = torch.Tensor([[word_idx]]).long().to(device)
                 input = torch.cat([input, word_tensor], 0)
             else:
-                output, hidden = model(input, hidden)
+                #output, hidden = model(input, hidden)
+                output = model(input)
                 word_weights = output.squeeze().div(args.temperature).exp().cpu()
                 word_idx = torch.multinomial(word_weights, 1)[0]
                 input.fill_(word_idx)
