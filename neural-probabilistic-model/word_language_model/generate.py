@@ -10,6 +10,8 @@ import argparse
 import torch
 
 import data
+import math
+import random
 
 parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 Language Model')
 
@@ -38,22 +40,47 @@ if torch.cuda.is_available():
     if not args.cuda:
         print("WARNING: You have a CUDA device, so you should probably run with --cuda")
 
-device = torch.device("cuda" if args.cuda else "cpu")
+def batchify(data, bsz):
+    # Work out how cleanly we can divide the dataset into bsz parts.
+    nbatch = data.size(0) // bsz
+    # Trim off any extra elements that wouldn't cleanly fit (remainders).
+    data = data.narrow(0, 0, nbatch * bsz)
+    # Evenly divide the data across the bsz batches.
+    data = data.view(bsz, -1).t().contiguous()
+    return data.to(device)
+
+eval_batch_size = 1
+
+def get_batch_FNN(source, i):
+    if(7 < (len(source) - i)):
+        seq_len = min(7, len(source) - 1 - i)
+        data = source[i:i+seq_len]
+        target = source[i+seq_len].view(-1)
+        return data, target
+    else:
+        return None, None
+
+#device = torch.device("cuda" if args.cuda else "cpu")
+device = torch.device("cpu")
 
 if args.temperature < 1e-3:
     parser.error("--temperature has to be greater or equal 1e-3")
 
 with open(args.checkpoint, 'rb') as f:
-    model = torch.load(f).to(device)
+    model = torch.load(f, map_location='cpu').to(device)
 model.eval()
 
 corpus = data.Corpus(args.data)
 ntokens = len(corpus.dictionary)
 
+train_data = batchify(corpus.train, 1)
+j = math.floor((len(train_data) - 8) * random.random())
+data, _ = get_batch_FNN(train_data, j)
+
 is_transformer_model = hasattr(model, 'model_type') and model.model_type == 'Transformer'
 # if model.model_type == 'FNN'
     # hidden = model.init_hidden(1)
-input = torch.randint(ntokens, (1, 1), dtype=torch.long).to(device)
+input = torch.randint(ntokens, (7, 1), dtype=torch.long).to(device)
 
 with open(args.outf, 'w') as outf:
     with torch.no_grad():  # no tracking history
@@ -66,10 +93,10 @@ with open(args.outf, 'w') as outf:
                 input = torch.cat([input, word_tensor], 0)
             else:
                 #output, hidden = model(input, hidden)
-                output = model(input)
+                output = model(data)
                 word_weights = output.squeeze().div(args.temperature).exp().cpu()
                 word_idx = torch.multinomial(word_weights, 1)[0]
-                input.fill_(word_idx)
+                data.fill_(word_idx)
 
             word = corpus.dictionary.idx2word[word_idx]
 

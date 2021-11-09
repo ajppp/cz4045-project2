@@ -60,7 +60,12 @@ class FNNModel(nn.Module):
         tanh = self.tanh(Hd)
         U = self.decoder(tanh)
         decoded = Wb + U
-        #decoded = torch.transpose(decoded, 1, 0)
-        decoded = decoded.reshape(self.bsz, self.ntoken)
-        ##decoded = decoded.view(-1, self.ntoken)
+
+        # uncomment this line for training
+        #decoded = decoded.reshape(self.bsz, self.ntoken)
+
+        # uncomemnt these two lines when running generate
+        decoded = torch.transpose(decoded, 1, 0)
+        decoded = decoded.view(-1, self.ntoken)
+
         return F.log_softmax(decoded, dim=1)
