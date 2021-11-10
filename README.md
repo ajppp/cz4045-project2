@@ -8,6 +8,17 @@ The second is on Named Entity Recognition (NER). The aim is to see how a CNN can
 The source code for both questions are in the SourceCode folder, which contains 2 subfolders, neural-probabilistic-model (Question 1) and named-entity-recognition (Question 2). 
 
 ## Question 1 (Neural Language Model)
+`FNNModel.py` is the class file for the FNN model that was built from scratch
+`FNNModel1.py` and `FNNModel2.py` were classes made for convenience so that we could train the model with multiple layers
+Line 65 of the class should be uncommented while lines 68 and 69 are commented when training the model
+The opposite is needed when generating text using `generate.py`
+
+In order to train the model 
+`python fnn_main.py --cuda --model FNN`
+
+In order to generate text based on some random phrase,
+`python generate.py`
+
 
 
 ## Question 2 (Named Entity Recognition)
